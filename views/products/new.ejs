@@ -6,6 +6,7 @@
     <title>Create a Product</title>
   </head>
   <body>
+    <a href="/products/">Back to Products</a>
     <h1>Create a New Product for the Cheese Shop</h1>
 
     <form action="/products" method="POST">
@@ -18,16 +19,17 @@
     </div>
     <div>
         <label for="type">Milk Type:</label>
-        <input list="types" name="types" id="types" />
-        <datalist id="types">
-            <option value="cow"></option>
-            <option value="goat"></option>
-            <option value="sheep"></option>
-            <option value="buffalo"></option>
-            <option value="polar bear"></option>
-            <option value="mixed, cow & goat"></option>
-            <option value="mixed, cow & sheep"></option>
-            <option value="mixed, cow, goat, & sheep"></option>
+        <input list="type" name="type" id="type" />
+
+        <datalist id="type">
+            <option value="cow">
+            <option value="goat">
+            <option value="sheep">
+            <option value="buffalo">
+            <option value="polar bear">
+            <option value="mixed, cow & goat">
+            <option value="mixed, cow & sheep">
+            <option value="mixed, cow, goat, & sheep">
         </datalist>
     </div>
     <div>

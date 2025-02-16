@@ -12,15 +12,31 @@ mongoose.connection.on("connected", () => {
 
 const Product = require("./models/product.js");
 
+app.use(express.urlencoded({ extended: false }));
+
 
 app.get("/", async (req, res) => {
     res.render("index.ejs");
+});
+
+app.get("/products", async (req, res) => {
+    const allProducts = await Product.find();
+    res.render("products/index.ejs", { products: allProducts });
 });
 
 app.get("/products/new", (req, res) => {
     res.render("products/new.ejs");
 });
 
+app.post("/products", async (req,res) => {
+    if (req.body.available === "on") {
+        req.body.available = true;
+    } else {
+        req.body.available = false;
+    }
+    await Product.create(req.body);
+    res.redirect("/products");
+});
 
 
 
