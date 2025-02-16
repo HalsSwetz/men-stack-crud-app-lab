@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a Product</title>
+  </head>
+  <body>
+    <h1>Create a New Product for the Cheese Shop</h1>
+
+    <form action="/products" method="POST">
+        <fieldset>
+            <legend>Add Product Info</legend>
+    <div>
+        <label for="name">Name:</label>
+        <div><small>required</small></div>
+        <input type="text" name="name" id="name" required />
+    </div>
+    <div>
+        <label for="type">Milk Type:</label>
+        <input list="types" name="types" id="types" />
+        <datalist id="types">
+            <option value="cow"></option>
+            <option value="goat"></option>
+            <option value="sheep"></option>
+            <option value="buffalo"></option>
+            <option value="polar bear"></option>
+            <option value="mixed, cow & goat"></option>
+            <option value="mixed, cow & sheep"></option>
+            <option value="mixed, cow, goat, & sheep"></option>
+        </datalist>
+    </div>
+    <div>
+        <label for="cost">Cost per pound:</label>
+        <input type="number" name="cost" id="cost" />
+    </div>
+    <div>
+        <label for="available">Available</label>
+        <input type="checkbox" name="available" id="available" />
+    </div>
+</fieldset>
+    <div>
+        <button type="submit">Add Product</button>
+    </div>
+      </form>
+
+
+
+
+
+
+
+
+  </body>
+</html>

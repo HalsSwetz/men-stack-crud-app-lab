@@ -10,11 +10,16 @@ mongoose.connection.on("connected", () => {
     console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
+const Product = require("./models/product.js");
+
+
 app.get("/", async (req, res) => {
     res.render("index.ejs");
 });
 
-
+app.get("/products/new", (req, res) => {
+    res.render("products/new.ejs");
+});
 
 
 
