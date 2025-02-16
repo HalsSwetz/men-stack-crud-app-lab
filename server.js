@@ -28,6 +28,11 @@ app.get("/products/new", (req, res) => {
     res.render("products/new.ejs");
 });
 
+app.get("/products/:productId", async (req, res) => {
+    const foundProduct = await Product.findById(req.params.productId);
+    res.render("products/show.ejs", { product: foundProduct});
+});
+
 app.post("/products", async (req,res) => {
     if (req.body.available === "on") {
         req.body.available = true;

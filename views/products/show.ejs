@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= product.name %></title>
+  </head>
+  <body>
+    <a href="/products/">Back to Products</a>
+
+    <h1><%= product.name %></h1>
+    <h2>made from: <%= product.type %> milk</h2>
+    <h2>$<%= product.cost %> per pound</h2>
+    <% if (product.available) { %>
+        <p>This product is available.</p>
+      <% } else { %>
+        <p>This product is not available!</p>
+      <% } %>
+  </body>
+</html>

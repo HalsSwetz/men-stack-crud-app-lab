@@ -10,7 +10,7 @@
     <h1>All Cheese Products</h1>
     <ul>
         <% products.forEach(product => { %>
-          <li><%= product.name %></li>
+          <li><a href="/products/<%= product._id %>"><%= product.name %></a></li>
         <% }); %>
       </ul>
   </body>
