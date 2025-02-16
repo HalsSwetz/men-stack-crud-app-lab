@@ -51,7 +51,12 @@ app.delete("/products/:productId", async (req, res) => {
     res.redirect("/products");
 });
 
-
+app.get("/products/:productId/edit", async (req, res) => {
+    const foundProduct = await Product.findById(req.params.productId);
+    res.render("products/edit.ejs", {
+        product: foundProduct,
+    });
+});
 
 
 

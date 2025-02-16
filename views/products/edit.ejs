@@ -1,0 +1,43 @@
+
+<body>
+<a href="/fruits">Back to Fruits</a>
+<h1>Edit <%= product.name %></h1>
+<form action="/products/<%=product._id%>?_method=PUT" method="POST">
+    <fieldset>
+        <legend>Add Product Info</legend>
+<div>
+    <label for="name">Name:</label>
+    <div><small>required</small></div>
+    <input type="text" name="name" id="name" value="<%= product.name %>" />
+</div>
+<div>
+    <label for="type">Milk Type:</label>
+    <input list="type" name="type" id="type" value="<%= product.type %>" />
+
+    <datalist id="type">
+        <option value="cow">
+        <option value="goat">
+        <option value="sheep">
+        <option value="buffalo">
+        <option value="polar bear">
+        <option value="mixed, cow & goat">
+        <option value="mixed, cow & sheep">
+        <option value="mixed, cow, goat, & sheep">
+    </datalist>
+</div>
+<div>
+    <label for="cost">Cost per pound:</label>
+    <input type="number" name="cost" id="cost" value="<%= product.cost %>" />
+</div>
+<div>
+    <label for="available">Available</label>
+    <input type="checkbox" name="available" id="available" <% if (product.available) { %>checked<% } %> >
+     
+</div>
+</fieldset>
+<div>
+    <button type="submit">Update Product</button>
+</div>
+  </form>
+
+</body>
