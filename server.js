@@ -58,7 +58,15 @@ app.get("/products/:productId/edit", async (req, res) => {
     });
 });
 
-
+app.put("/products/:productId", async (req, res) => {
+    if (req.body.available === "on") {
+        req.body.available = true;
+    } else {
+        req.body.available = false;
+    }
+    await Product.findByIdAndUpdate(req.params.productId, req.body);
+    res.redirect(`/products/${req.params.productId}`);
+});
 
 
 
